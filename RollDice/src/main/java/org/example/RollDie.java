@@ -1,14 +1,35 @@
 package org.example;
 
-import static java.lang.Math.random;
-
 public class RollDie {
-    int diceRoll;
+    private int initialRoll;
 
-    private void rollDie() {
-        diceRoll = (int) random();
+    public void initialRoll() {
+        initialRoll = rollDie();
     }
 
+    public int getInitialRoll() {
+    return initialRoll;
+    }
+
+    
+
+    private int rollDie() {
+
+        int max = 6;
+        int min = 1;
+        int range = max - min + 1;
+        int rand = 0;
+
+        // generate random numbers within 1 to 6
+        for (int i = 0; i < 6; i++) {
+            rand = (int) (Math.random() * range) + min;
+
+            // Output is different everytime this code is executed
+
+        }
+        return rand;
+
+    }
 
 
 }
