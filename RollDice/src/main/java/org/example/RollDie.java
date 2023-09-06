@@ -8,24 +8,24 @@ public class RollDie {
     }
 
     public int getInitialRoll() {
-    return initialRoll;
+        return initialRoll;
     }
 
-    
+    public int getNewRoll(){
+        return rollDie();
+    }
 
     private int rollDie() {
 
         int max = 6;
         int min = 1;
         int range = max - min + 1;
-        int rand = 0;
+        int rand = 1;
 
         // generate random numbers within 1 to 6
         for (int i = 0; i < 6; i++) {
             rand = (int) (Math.random() * range) + min;
-
             // Output is different everytime this code is executed
-
         }
         return rand;
 
