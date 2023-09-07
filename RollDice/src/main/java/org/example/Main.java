@@ -30,7 +30,7 @@ public class Main {
             boolean correct = false;
 
             while (!correct) {
-                System.out.println("Press enter to roll the dice again, other");
+                System.out.println("Press enter to roll the dice again.");
                 userInput = myScanner.nextLine();
                 int roll1 = rollDie.getNewRoll();
                 int roll2 = rollDie.getNewRoll();
