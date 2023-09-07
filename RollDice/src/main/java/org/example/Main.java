@@ -11,28 +11,52 @@ public class Main {
                 "\\' / . / /____/..\\\n" +
                 " \\/___/  \\'  '\\  /\n" +
                 "          \\'__'\\/");
-        System.out.println("Welcome to Roll the Die! Press enter to play.");
-        String start = myScanner.nextLine();
-        rollDie.initialRoll();
-        System.out.println("Your initial roll is " + rollDie.getInitialRoll() + "\n");
 
-        System.out.println("Keep rolling! Lets see how many rolls it takes to get " + rollDie.getInitialRoll() + " again.");
+        boolean keepPlaying = true;
+
+        while (keepPlaying) {
+
+            System.out.println("Welcome to Roll the Dice! Press enter to play.");
+            String userInput = myScanner.nextLine();
+            rollDie.initialRoll();
 
 
-        int count = 1;
-        boolean correct = false;
+            System.out.println("Your initial rolls were " + rollDie.getInitialRoll1() + " and " + rollDie.getInitialRoll2() + ", which give you a total of " + (rollDie.getInitialRollSum()));
 
-        while (!correct){
-            System.out.println("Press enter to roll the die again");
-            start = myScanner.nextLine();
-            int roll = rollDie.getNewRoll();
-            System.out.println("You rolled " + roll);
-            if (roll == rollDie.getInitialRoll()){
-                correct = true;
-            } else {
-                count += 1;
+            System.out.println("Keep rolling! Lets see how many rolls it takes to get a total of " + rollDie.getInitialRollSum() + " again.\n");
+
+
+            int count = 1;
+            boolean correct = false;
+
+            while (!correct) {
+                System.out.println("Press enter to roll the dice again, other");
+                userInput = myScanner.nextLine();
+                int roll1 = rollDie.getNewRoll();
+                int roll2 = rollDie.getNewRoll();
+                int rollSum = roll1 + roll2;
+                System.out.println("You rolled " + roll1 + " and " + roll2 + " which give you a total of " + (rollSum));
+                if (rollSum == rollDie.getInitialRollSum()) {
+                    correct = true;
+                } else {
+                    count += 1;
+                }
+
             }
+            System.out.println("it took " + count + " extra roll(s) of the dice. Well done!");
+            System.out.println("Would you like to play again? Enter yes or no.");
+            userInput = myScanner.nextLine();
+            if (userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y")) {
+
+            } else if (userInput.equalsIgnoreCase("no") || userInput.equalsIgnoreCase("n")) {
+                keepPlaying = false;
+            } else {
+                System.out.println("Invalid input. Bye!");
+                keepPlaying = false;
+            }
+
         }
-        System.out.println("it took " + count + " extra roll(s) of the die. Well done!");
+
+
     }
 }

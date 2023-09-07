@@ -1,17 +1,36 @@
 package org.example;
 
 public class RollDie {
-    private int initialRoll;
+    private int initialRoll1;
+    private int initialRoll2;
+    private int initialRollSum;
+
+
+
+/*    public RollDie() {
+        initialRoll();
+    }*/
 
     public void initialRoll() {
-        initialRoll = rollDie();
+        initialRoll1 = rollDie();
+        initialRoll2 = rollDie();
+        initialRollSum = initialRoll1 + initialRoll2;
     }
 
-    public int getInitialRoll() {
-        return initialRoll;
+    public int getInitialRoll1() {
+        return initialRoll1;
     }
 
-    public int getNewRoll(){
+
+    public int getInitialRoll2() {
+        return initialRoll2;
+    }
+
+    public int getInitialRollSum() {
+        return initialRollSum;
+    }
+
+    public int getNewRoll() {
         return rollDie();
     }
 
