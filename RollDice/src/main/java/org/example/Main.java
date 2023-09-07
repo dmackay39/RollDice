@@ -14,6 +14,7 @@ public class Main {
 
         int count = 1;
         boolean correct = false;
+
         while (!correct){
             System.out.println("Press enter to roll the die again");
             start = myScanner.nextLine();
